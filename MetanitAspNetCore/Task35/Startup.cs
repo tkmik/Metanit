@@ -22,7 +22,7 @@ namespace Task35
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseMiddleware<TimeMiddleware>();
+            app.UseMiddleware<TimerMiddleware>();
             app.Run(async (context) => 
             {
                 await context.Response.WriteAsync("Hello World!");

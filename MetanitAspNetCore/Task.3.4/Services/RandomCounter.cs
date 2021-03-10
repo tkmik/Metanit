@@ -15,7 +15,7 @@ namespace Task34.Services
         }
         public int Value
         {
-            get { return Value; }
+            get { return _value; }
         }
     }
 }

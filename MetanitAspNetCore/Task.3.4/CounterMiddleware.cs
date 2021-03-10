@@ -10,7 +10,7 @@ namespace Task34
     public class CounterMiddleware
     {
         private readonly RequestDelegate _next;
-        private int i = 0; // счетчик запросов
+        private int i = 0; 
         public CounterMiddleware(RequestDelegate next)
         {
             _next = next;
@@ -20,9 +20,7 @@ namespace Task34
         {
             i++;
             httpContext.Response.ContentType = "text/html;charset=utf-8";
-            await httpContext.Response.WriteAsync($"Запрос {i};" +
-                $" Counter: {counter.Value};" +
-                $" Service: {counterService.Counter.Value}");
+            await httpContext.Response.WriteAsync($"Запрос {i}; Counter: {counter.Value}; Service: {counterService.Counter.Value}");
         }
     }
 }

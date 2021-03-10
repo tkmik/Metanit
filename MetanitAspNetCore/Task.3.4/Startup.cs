@@ -17,19 +17,13 @@ namespace Task34
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddTransient<ICounter, RandomCounter>();
-            //services.AddTransient<CounterService>();
-
-            RandomCounter rndCounter = new RandomCounter();
-            services.AddSingleton<ICounter>(rndCounter);
-            services.AddSingleton<CounterService>(new CounterService(rndCounter));
+            services.AddTransient<ICounter, RandomCounter>();
+            services.AddTransient<CounterService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
-            
-
             app.UseMiddleware<CounterMiddleware>();
         }
     }
