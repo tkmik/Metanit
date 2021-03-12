@@ -1,5 +1,5 @@
 #MetanitAspNetCore
-* Task21 - MiddleWare, Use, Run, Map
+* Task21 - Middleware, Use, Run, Map
 * Task29 - Static Files
 * Task211 - Error processing
 * Task212 - Working with HTTPS
