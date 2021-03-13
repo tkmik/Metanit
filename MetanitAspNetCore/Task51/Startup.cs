@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Task51.Models;
+using Task51.Extensions;
 
 namespace Task51
 {
@@ -26,39 +28,54 @@ namespace Task51
             app.UseSession();
             app.Run(async (context)=> 
             {
-                if (context.Session.Keys.Contains("name"))
+                if (context.Session.Keys.Contains("person"))
                 {
-                    await context.Response.WriteAsync($"Hello {context.Session.GetString("name")}");
+                    Person person = context.Session.Get<Person>("person");
+                    await context.Response.WriteAsync($"{person.Name}-{person.Age}");
                 }
                 else
                 {
-                    context.Session.SetString("name", "Mikita");
-                    await context.Response.WriteAsync("Hello");
+                    Person person = new Person() { Name = "Nikita", Age = 0 };
+                    context.Session.Set<Person>("person", person);
+                    await context.Response.WriteAsync("hello");
                 }
             });
+            //app.UseSession();
             //app.Run(async (context)=> 
             //{
-            //    if (context.Request.Cookies.ContainsKey("name"))
+            //    if (context.Session.Keys.Contains("name"))
             //    {
-            //        string name = context.Request.Cookies["name"];
-            //        await context.Response.WriteAsync(name);
+            //        await context.Response.WriteAsync($"Hello {context.Session.GetString("name")}");
             //    }
             //    else
             //    {
-            //        context.Response.Cookies.Append("name", "Mikita");
+            //        context.Session.SetString("name", "Mikita");
             //        await context.Response.WriteAsync("Hello");
             //    }
             //});
-            ////app.Use(async (context, next)=> 
+            ////app.Run(async (context)=> 
             ////{
-            ////    context.Items["text"] = "Text from Items";
-            ////    await next.Invoke();
+            ////    if (context.Request.Cookies.ContainsKey("name"))
+            ////    {
+            ////        string name = context.Request.Cookies["name"];
+            ////        await context.Response.WriteAsync(name);
+            ////    }
+            ////    else
+            ////    {
+            ////        context.Response.Cookies.Append("name", "Mikita");
+            ////        await context.Response.WriteAsync("Hello");
+            ////    }
             ////});
-            ////app.Run(async (context) => 
-            ////{
-            ////    context.Response.ContentType = "text/html; charset=utf-8";
-            ////    await context.Response.WriteAsync($"{context.Items["text"]}");
-            ////});
+            //////app.Use(async (context, next)=> 
+            //////{
+            //////    context.Items["text"] = "Text from Items";
+            //////    await next.Invoke();
+            //////});
+            //////app.Run(async (context) => 
+            //////{
+            //////    context.Response.ContentType = "text/html; charset=utf-8";
+            //////    await context.Response.WriteAsync($"{context.Items["text"]}");
+            //////});
         }
     }
 }
