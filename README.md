@@ -10,3 +10,5 @@
 * Task45 - Working with configuration
 * Task47 - Projection of configuration to classes
 * Task51 - Cookie, Session
+* Task61 - ILogger
+* Task64 - Create LoggerProvider
