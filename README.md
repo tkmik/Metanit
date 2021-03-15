@@ -12,3 +12,8 @@
 * Task51 - Cookie, Session
 * Task61 - ILogger
 * Task64 - Create LoggerProvider
+* Task71 - Basics routing
+* Task72 - RouterMiddleware
+* Task73 - Defining routes
+* Task75 - Routes constraints
+* Task76 - Creating my own route
