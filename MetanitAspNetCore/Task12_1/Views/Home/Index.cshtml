@@ -1,0 +1,25 @@
+﻿@using Task12_1.Models
+@using Task12_1.ViewModels
+@*@model IEnumerable<Phone>*@ 
+@model IndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form class="form-inline">
+    <label>Select the company:</label>
+    <select name="CompanyId" class="form-control">
+        @foreach (CompanyModel company in Model.Companies)
+        {
+            <option value="@company.Id">@company.Name</option>
+        }
+    </select>
+    <input type="submit"/>
+</form>
+<br />
+<table class="table">
+    @foreach(Phone p in Model.Phones)
+            {
+                <tr><td>@p.Name</td><td>@p.Manufacturer?.Name</td><td>@p.Price</td></tr>
+            }
+</table>
