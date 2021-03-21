@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    string[] cities = new string[] { "Brest", "Minsk", "Vitebsk" };
+}
+@using Task13_1.App_Code
+
+@Html.CreateList(cities)
+
+
