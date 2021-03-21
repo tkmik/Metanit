@@ -32,9 +32,14 @@ namespace Task12_4.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }   
+        [HttpGet]
+        public IActionResult GetData()
+        {
+            return View();
         }
-        [HttpGet]        
-        public IActionResult GetData(string[] items)
+        [HttpPost]
+        public IActionResult GetData([FromForm] string[] items)
         {
             string result = "";
             foreach (var item in items)
@@ -43,7 +48,8 @@ namespace Task12_4.Controllers
             }
             return Content(result);
         }
-        public IActionResult GetPhone(Phone myPhone)
+        [HttpPost]
+        public IActionResult GetPhone([FromQuery] Phone myPhone)
         {
             return Content($"Name:{myPhone?.Name}");
         }
