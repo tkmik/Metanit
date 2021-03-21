@@ -22,3 +22,6 @@
 * Task97 - Sending File, Controller context, Dependency injection
 * Task10_1 - Working with Views, sending data, dependency injection
 * Task11_1 - Working with Routing
+* Task12_1 - Working with models
+* Task12_4 - Sending data to controllers
+* Task13_1 - Working with some HTML-helpers
