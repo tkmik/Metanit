@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using Task15_1.Models
+@{ 
+    User nikita = new User { Name = "Some", Age = 100};
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @await Component.InvokeAsync("Timer", new { includeSeconds = false, formatAMPM = true })
+    @await Component.InvokeAsync("Person", new { User = nikita })
+    @await Component.InvokeAsync("UsersList")
+    @await Component.InvokeAsync("Header") 
+</div>
