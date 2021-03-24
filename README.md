@@ -26,3 +26,4 @@
 * Task12_4 - Sending data to controllers
 * Task13_1 - Working with some HTML-helpers
 * Task14_1 - Working with some Tag-helpers
+* Task15_1 - Working with a ViewComponent
