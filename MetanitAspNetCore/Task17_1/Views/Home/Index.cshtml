@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Task17_1.Models.User>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a asp-action="Create">Add User</a>
+<table class="table">
+    <tr>
+        <th>
+            <a asp-controller="Home" asp-action="Index" asp-route-sortOrder="@ViewBag.NameSort">Name</a>
+        </th>
+        <th>
+            <a asp-controller="Home" asp-action="Index" asp-route-sortOrder="@ViewBag.AgeSort">Age</a>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">Change</a> |
+                <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
