@@ -28,3 +28,4 @@
 * Task14_1 - Working with some Tag-helpers
 * Task15_1 - Working with a ViewComponent
 * Task16_1 - Working with validation
+* Task17_1 - Working with Entity Framework(adding, editing, deleting, sorting)
