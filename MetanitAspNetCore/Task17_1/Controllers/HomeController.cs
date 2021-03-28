@@ -18,22 +18,45 @@ namespace Task17_1.Controllers
         {
             db = context;
         }
-
-        public async Task<IActionResult> Index(SortState sortOrder = SortState.NameAsc)
+        [HttpGet]        
+        public async Task<IActionResult> Index(int? company, string name, int page = 1, 
+            SortState sortOrder = SortState.NameAsc)
         {
+            int pageSize = 2;
+            //Filtering
             IQueryable<User> users = db.Users;
-            ViewData["NameSort"] = sortOrder == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
-            ViewData["AgeSort"] = sortOrder == SortState.AgeAsc ? SortState.AgeDesc : SortState.AgeAsc;
-
-            users = sortOrder switch
+            if (!String.IsNullOrEmpty(name))
             {
-                SortState.NameDesc => users.OrderByDescending(sort => sort.Name),
-                SortState.AgeAsc => users.OrderBy(sort => sort.Age),
-                SortState.AgeDesc => users.OrderByDescending(sort => sort.Age),
-                _ => users.OrderBy(sort => sort.Name),
-            };
+                users = users.Where(n => n.Name.Contains(name));
+            }
+            //Sorting
+            switch (sortOrder)
+            {
+                case SortState.NameDesc:
+                    users = users.OrderByDescending(sort => sort.Name);
+                    break;
+                case SortState.AgeAsc:
+                    users = users.OrderBy(sort => sort.Age);
+                    break;
+                case SortState.AgeDesc:
+                    users = users.OrderByDescending(sort => sort.Age);
+                    break;
+                default:
+                    users = users.OrderBy(sort => sort.Name);
+                    break;
+            }
+            //Pagination
+            var count = await users.CountAsync();
+            var items = await users.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
-            return View(await users.ToListAsync());
+            IndexViewModel viewModel = new IndexViewModel()
+            {
+                PageViewModel = new PageViewModel(count, page, pageSize),
+                SortViewModel = new SortViewModel(sortOrder),
+                FilterViewModel = new FilterViewModel(name),
+                Users = items
+            };
+            return View(viewModel);
         }
         public IActionResult Create()
         {
