@@ -29,3 +29,4 @@
 * Task15_1 - Working with a ViewComponent
 * Task16_1 - Working with validation
 * Task17_1 - Working with Entity Framework(adding, editing, deleting, sorting, filtering and pagination)
+* Task20_1 - Working with Filters
