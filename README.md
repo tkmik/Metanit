@@ -32,3 +32,7 @@
 * Task18_1 - Working with Razor Pages(request processing, property binding)
 * Task18_9 - Working with Razor Pages(connection to Entity Framework(adding, editing, deleting))
 * Task20_1 - Working with Filters
+
+#MetanitEntityFrameworkCore
+* Task1_1 - Working with EFCore and logging
+* Task1_3 - Testing 'Scaffold-DbContext', working with adding, editing and deleting
