@@ -1,0 +1,28 @@
+﻿@page "{handler?}"
+@using Task18_1.Models
+@model Task18_1.Pages.PersonModel
+@{
+    @*<h3>@Model.Message</h3>
+    <form method="post">
+        <label for="name">Name</label><br />
+        <input type="text" name="name" id="name" /> <br /> <br />
+        <label for="age">Age</label> <br />
+        <input type="number" name="age" id="age" /><br /> <br />
+        <input type="submit" value="Send" />
+    </form>*@
+    <form method="post">
+        <input type="number" name="age" />
+        <input type="submit" value="Greater" asp-page-handler="GreaterThan" />
+        <input type="submit" value="Less" asp-page-handler="LessThan" />
+    </form>   
+    <table class="table">
+        <tr><td>Name</td><td>Age</td></tr>
+        @foreach (Person person in Model.DisplayedPeople)
+        {
+            <tr>
+                <td>@person.Name</td>
+                <td>@person.Age</td>
+            </tr>
+        }
+    </table>
+}

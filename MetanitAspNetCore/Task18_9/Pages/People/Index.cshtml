@@ -1,0 +1,30 @@
+﻿@page
+@using Task18_9.Models
+@model Task18_9.Pages.People.IndexModel
+@{
+}
+
+<p><a asp-page="Create">Add user</a></p>
+<table class="table">
+    <thead>
+        <tr><th>Name</th><th>Age</th></tr>
+    </thead>
+    <tbody>
+        @foreach (Person person in Model.People)
+        {
+            <tr>
+                <td>@person.Name</td>
+                <td>@person.Age</td>
+                <td>
+                    <form method="POST">
+                        <a asp-page="Edit" asp-route-id="@person.Id">Change</a>
+                        <button type="submit" asp-page-handler="delete" asp-route-id="@person.Id">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

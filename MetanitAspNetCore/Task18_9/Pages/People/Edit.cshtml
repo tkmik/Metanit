@@ -1,0 +1,25 @@
+﻿@page "{id:int}"
+@model Task18_9.Pages.People.EditModel
+@{
+}
+<form method="POST">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Person.Id" type="hidden"/>
+    <div>
+        <label>Name</label>
+        <div>
+            <input type="text" asp-for="Person.Name" />
+            <span asp-validation-for="Person.Name"></span>
+        </div>       
+    </div>
+    <div>
+        <label>Age</label>
+        <div>
+            <input type="number" asp-for="Person.Age"/>
+            <span asp-validation-for="Person.Age"></span>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Send"/>
+    </div>
+</form>

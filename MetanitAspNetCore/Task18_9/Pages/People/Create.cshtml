@@ -1,0 +1,17 @@
+﻿@page
+@model Task18_9.Pages.People.CreateModel
+@{
+}
+<div asp-validation-summary="All"></div>
+<form method="POST">
+    <div>
+        <label>Name</label><br />
+        <input type="text" asp-for="Person.Name"/>
+    </div>
+    <div>
+        <label>Age</label><br />
+        <input type="number" asp-for="Person.Age"/>
+    </div>
+    <input type="submit" value="Send"/>
+</form>
+
