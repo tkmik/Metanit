@@ -1,4 +1,4 @@
-#MetanitAspNetCore
+# MetanitAspNetCore
 * Task21 - Middleware, Use, Run, Map
 * Task29 - Static Files
 * Task211 - Error processing
@@ -33,6 +33,6 @@
 * Task18_9 - Working with Razor Pages(connection to Entity Framework(adding, editing, deleting))
 * Task20_1 - Working with Filters
 
-#MetanitEntityFrameworkCore
+# MetanitEntityFrameworkCore
 * Task1_1 - Working with EFCore and logging
 * Task1_3 - Testing 'Scaffold-DbContext', working with adding, editing and deleting
