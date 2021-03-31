@@ -31,6 +31,7 @@
 * Task17_1 - Working with Entity Framework(adding, editing, deleting, sorting, filtering and pagination)
 * Task18_1 - Working with Razor Pages(request processing, property binding)
 * Task18_9 - Working with Razor Pages(connection to Entity Framework(adding, editing, deleting))
+* Task19_1 - Working with Web API
 * Task20_1 - Working with Filters
 
 # MetanitEntityFrameworkCore
