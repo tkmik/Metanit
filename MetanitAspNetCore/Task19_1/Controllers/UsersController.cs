@@ -26,6 +26,7 @@ namespace Task19_1.Controllers
             }
         }
         [HttpGet]
+        [Produces("application/json")]
         public async Task<ActionResult<IEnumerable<User>>> Get()
         {
             return await db.Users.ToListAsync();
@@ -44,9 +45,17 @@ namespace Task19_1.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> Post(User user)
         {
-            if (user is null)
+            if (user.Age == 99)
             {
-                return BadRequest();
+                ModelState.AddModelError("Age", "The Age mustn't be to equal 99");
+            }
+            if (user.Name == "admin")
+            {
+                ModelState.AddModelError("Name", "You cannot create user with this username");
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
             }
 
             db.Users.Add(user);
@@ -69,8 +78,8 @@ namespace Task19_1.Controllers
             await db.SaveChangesAsync();
             return Ok(user);
         }
-        [HttpDelete]
-        public async Task<ActionResult> Delete(int id)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<User>> Delete(int id)
         {
             User user = await db.Users.FirstOrDefaultAsync(search => search.Id == id);
             if (user is null)

@@ -32,7 +32,8 @@ namespace Task19_1
             services.AddDbContext<UsersContext>((options) => 
             {
                 options.UseSqlServer(connectionString);
-            });            
+            });
+            services.AddMvc().AddXmlDataContractSerializerFormatters();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -43,15 +44,16 @@ namespace Task19_1
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //    app.UseSwagger();
-            //    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Task19_1 v1"));
-            //}
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Task19_1 v1"));
+            }
 
             //app.UseHttpsRedirection();
-
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseRouting();
 
             //app.UseAuthorization();
