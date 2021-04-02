@@ -38,3 +38,4 @@
 # MetanitEntityFrameworkCore
 * Task1_1 - Working with EFCore and logging
 * Task1_3 - Testing 'Scaffold-DbContext', working with adding, editing and deleting
+* Task2_1 - Working with migrations, attributes, Fluent API
