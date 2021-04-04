@@ -33,7 +33,8 @@
 * Task18_9 - Working with Razor Pages(connection to Entity Framework(adding, editing, deleting))
 * Task19_1 - Working with Web API
 * Task20_1 - Working with Filters
-* Task21_1 - Working with authorization
+* Task21_1 - Working with authorization(using cookies)
+* Task21_5 - Working with authorization(using roles, claims)
 
 # MetanitEntityFrameworkCore
 * Task1_1 - Working with EFCore and logging
