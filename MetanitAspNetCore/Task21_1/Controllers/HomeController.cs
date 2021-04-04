@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Task21_1.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -18,13 +19,16 @@ namespace Task21_1.Controllers
         {
             _logger = logger;
         }
-
-        [Authorize]
+               
         public IActionResult Index()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+            return Content("You must be authorization");
         }
-
+        [AllowAnonymous]
         public IActionResult Privacy()
         {
             return View();
