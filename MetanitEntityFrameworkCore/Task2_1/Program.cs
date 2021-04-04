@@ -10,7 +10,8 @@ namespace Task2_1
         {
             using (AppDbContext db = new AppDbContext())
             {
-                db.Users.ToList();
+                User user = new User { Name = "Mik", Age = 10 };
+                db.Users.Add(user);
                 db.SaveChanges();
             }
         }
