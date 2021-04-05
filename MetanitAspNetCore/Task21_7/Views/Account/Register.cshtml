@@ -1,0 +1,36 @@
+﻿@model Task21_7.Models.RegisterModel
+
+<h3>Registration</h3>
+
+<form asp-controller="Account" asp-action="Register" asp-antiforgery="true">
+    <div class="validation" asp-validation-summary="All"></div>
+    <div>
+        <div>
+            <label asp-for="Email">Email</label><br />
+            <input asp-for="Email" type="text" />
+        </div>
+        <div>
+            <label asp-for="Password">Password</label><br />
+            <input asp-for="Password" type="password" />
+        </div>
+        <div>
+            <label asp-for="ConfirmPassword">Confirm Password</label><br />
+            <input asp-for="ConfirmPassword" type="password" />
+        </div>
+        <div>
+            <label asp-for="City">City</label><br />
+            <input asp-for="City" type="text" />
+        </div>
+        <div>
+            <label asp-for="Company">Company</label><br />
+            <input asp-for="Company" type="text"/>
+        </div>
+        <div>
+            <label asp-for="Year">Year of birth</label><br />
+            <input asp-for="Year" type="text"/>
+        </div>
+        <div>
+            <input type="submit" value="Registration" />
+        </div>
+    </div>
+</form>
