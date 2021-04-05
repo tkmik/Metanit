@@ -42,3 +42,7 @@
 * Task1_1 - Working with EFCore and logging
 * Task1_3 - Testing 'Scaffold-DbContext', working with adding, editing and deleting
 * Task2_1 - Working with migrations, attributes, Fluent API
+* Task3_1 - Working with keys & navigation properties
+* Task3_6 - Working with 'One to One' relation
+* Task3_8 - Working witg 'Many to Many' relation
+* Task3_9 - Working with dependent type
