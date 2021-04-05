@@ -35,6 +35,8 @@
 * Task20_1 - Working with Filters
 * Task21_1 - Working with authorization(using cookies)
 * Task21_5 - Working with authorization(using roles, claims)
+* Task21_7 - Working with authorization(working with constraints)
+* Task21_9 - Working with JWT-token
 
 # MetanitEntityFrameworkCore
 * Task1_1 - Working with EFCore and logging
