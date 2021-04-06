@@ -37,6 +37,8 @@
 * Task21_5 - Working with authorization(using roles, claims)
 * Task21_7 - Working with authorization(working with constraints)
 * Task21_9 - Working with JWT-token
+* Task22_1 - Wokking with default ASP.NET Core Identity
+* Task22_3 - Working with Identity from scratch(authorization, changing password, deleting users, editing user data)
 
 # MetanitEntityFrameworkCore
 * Task1_1 - Working with EFCore and logging
