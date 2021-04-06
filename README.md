@@ -46,3 +46,5 @@
 * Task3_6 - Working with 'One to One' relation
 * Task3_8 - Working witg 'Many to Many' relation
 * Task3_9 - Working with dependent type
+* Task4_1 - Working with 'Table per Hierarchy'
+* Task4_2 - Working with 'Table per Type'
