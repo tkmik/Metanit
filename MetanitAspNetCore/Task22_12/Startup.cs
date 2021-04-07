@@ -10,9 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Task22_3.Models;
+using Task22_12.Models;
 
-namespace Task22_3
+namespace Task22_12
 {
     public class Startup
     {
@@ -26,25 +26,14 @@ namespace Task22_3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=confemdb;Trusted_Connection=True;";
             services.AddDbContext<AppDbContext>(options => 
             {
-                options.UseSqlServer(Configuration.GetConnectionString("Default"));
+                options.UseSqlServer(connectionString);
             });
-            services.AddIdentity<User, IdentityRole>(options => 
-                {
-                    //password
-                    options.Password.RequiredLength = 8; //min lenght
-                    options.Password.RequireNonAlphanumeric = false; //alpha-number characters
-                    options.Password.RequireLowercase = false; //lower character index
-                    options.Password.RequireUppercase = false; //upper character index
-                    options.Password.RequireDigit = false; //number character
-                    //email
-                    options.User.RequireUniqueEmail = true; //unique email
-                    //username
-                    options.User.AllowedUserNameCharacters = ".@abcdefghijklmnopqrstuvwxyz";
-
-                })
-                .AddEntityFrameworkStores<AppDbContext>();
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
             services.AddControllersWithViews();
         }
 
