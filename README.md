@@ -50,3 +50,4 @@
 * Task3_9 - Working with dependent type
 * Task4_1 - Working with 'Table per Hierarchy'
 * Task4_2 - Working with 'Table per Type'
+* Task5_1 - Working with different queries like OrderBy, GroupBy, Where, Any, All, Join, Union, etc
