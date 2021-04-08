@@ -40,6 +40,9 @@
 * Task22_1 - Wokking with default ASP.NET Core Identity
 * Task22_3 - Working with Identity from scratch(authorization, changing password, deleting users, editing user data, password validation, user validation, etc)
 * Task22_12 - Working with email confirmation and resetting password
+* Task23_1 - Working with BundlerMinifier
+* Task24_1 - Working with MemoryCache
+* Task24_2 - Working with ResponseCache
 
 # MetanitEntityFrameworkCore
 * Task1_1 - Working with EFCore and logging
