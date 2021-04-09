@@ -23,7 +23,7 @@ namespace Task24_2
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {          
             services.AddControllersWithViews(options =>
             {
                 options.CacheProfiles.Add("Caching",
@@ -37,6 +37,10 @@ namespace Task24_2
                         Location = ResponseCacheLocation.None,
                         NoStore = true
                     });
+            });
+            services.AddResponseCompression(options => 
+            {
+                options.EnableForHttps = true;
             });
         }
 
@@ -53,15 +57,22 @@ namespace Task24_2
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseResponseCompression();
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions() 
+            {
+                OnPrepareResponse = context => 
+                {
+                    context.Context.Response.Headers.Add("Cache-Control", "public,max-age=600");
+                }
+            });
 
             app.UseRouting();
 
             app.UseAuthorization();
-
+           
             app.UseEndpoints(endpoints =>
-            {
+            {                
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
