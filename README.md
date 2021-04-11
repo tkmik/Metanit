@@ -43,6 +43,8 @@
 * Task23_1 - Working with BundlerMinifier
 * Task24_1 - Working with MemoryCache
 * Task24_2 - Working with ResponseCache
+* Task26_1 - Project for Tests
+* Task26_1.Tests - Working with xUnit
 
 # MetanitEntityFrameworkCore
 * Task1_1 - Working with EFCore and logging
