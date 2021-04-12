@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="rewrite.txt" />
+    <Content Include="urlrewrite.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\html\page.html" />
+  </ItemGroup>
+
+</Project>
