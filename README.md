@@ -45,6 +45,7 @@
 * Task24_2 - Working with ResponseCache
 * Task26_1 - Project for Tests
 * Task26_1.Tests - Working with xUnit
+* Task27_1 - Working with URL Rewriting
 
 # MetanitEntityFrameworkCore
 * Task1_1 - Working with EFCore and logging
