@@ -46,6 +46,7 @@
 * Task26_1 - Project for Tests
 * Task26_1.Tests - Working with xUnit
 * Task27_1 - Working with URL Rewriting
+* Task28_1 - Working with localization, IStringLocalizer
 
 # MetanitEntityFrameworkCore
 * Task1_1 - Working with EFCore and logging
