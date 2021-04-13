@@ -62,3 +62,6 @@
 * Task6_1 - Working with sql commands, function, procedure
 * Task7_1 - Working with PostgreSQL
 * Task7_2 - Working with MySQL
+* Task8_1 - Working with concurrency check
+* Task8_2 - Working with compiled query
+* Task8_3 - Working with views through queries
