@@ -47,6 +47,7 @@
 * Task26_1.Tests - Working with xUnit
 * Task27_1 - Working with URL Rewriting
 * Task28_1 - Working with localization, IStringLocalizer, controller localization, view localization, annotation localization, etc
+* Task29_1 - Working with SignalR Core
 
 # MetanitEntityFrameworkCore
 * Task1_1 - Working with EFCore and logging
