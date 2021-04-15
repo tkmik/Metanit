@@ -40,13 +40,15 @@ namespace Task29_1
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapHub<ChatHub>("/chat",
-                    options => {
-                        options.ApplicationMaxBufferSize = 64;
-                        options.TransportMaxBufferSize = 64;
-                        options.LongPolling.PollTimeout = System.TimeSpan.FromMinutes(1);
-                        options.Transports = HttpTransportType.LongPolling | HttpTransportType.WebSockets;
-                    });
+                endpoints.MapHub<Chat>("/chat");
+                //endpoints.MapHub<ChatHub>("/chat",
+                //    options =>
+                //    {
+                //        options.ApplicationMaxBufferSize = 64;
+                //        options.TransportMaxBufferSize = 64;
+                //        options.LongPolling.PollTimeout = System.TimeSpan.FromMinutes(1);
+                //        options.Transports = HttpTransportType.LongPolling | HttpTransportType.WebSockets;
+                //    });
             });
         }
     }
