@@ -48,6 +48,9 @@
 * Task27_1 - Working with URL Rewriting
 * Task28_1 - Working with localization, IStringLocalizer, controller localization, view localization, annotation localization, etc
 * Task29_1 - Working with SignalR Core
+* Task30_1 - Working with CORS
+* Task30_2 - Working with CORS(Client)
+* Task31_1 - Working with Dapper
 
 # MetanitEntityFrameworkCore
 * Task1_1 - Working with EFCore and logging
