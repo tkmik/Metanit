@@ -71,3 +71,6 @@
 * Task8_1 - Working with concurrency check
 * Task8_2 - Working with compiled query
 * Task8_3 - Working with views through queries
+
+# MetanitMongoDB
+* Task4_1 - Working with connection to MongoDB
