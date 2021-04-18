@@ -51,6 +51,8 @@
 * Task30_1 - Working with CORS
 * Task30_2 - Working with CORS(Client)
 * Task31_1 - Working with Dapper
+* Task32_1 - Interacting with MongoDB
+* Task33_1 - Interacting with React.JS
 
 # MetanitEntityFrameworkCore
 * Task1_1 - Working with EFCore and logging
