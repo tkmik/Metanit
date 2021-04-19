@@ -74,3 +74,4 @@
 
 # MetanitMongoDB
 * Task4_1 - Working with connection to MongoDB
+* Task4_3 - Working with creation collection/document and insertion into the database
