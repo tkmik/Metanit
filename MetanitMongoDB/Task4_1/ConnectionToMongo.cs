@@ -4,9 +4,9 @@ using System.IO;
 
 namespace Task4_1
 {
-    public static class MongoClientExtensions
+    public static class ConnectionToMongo
     {
-        public static string UseDefaultConnectionString(this MongoClient client)
+        public static string UseDefaultConnectionString()
         {
             var builder = new ConfigurationBuilder();
             builder.SetBasePath(Directory.GetCurrentDirectory());

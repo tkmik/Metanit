@@ -9,8 +9,8 @@ namespace Task4_1
     {
         static void Main(string[] args)
         {
-            MongoClient client = new MongoClient();
-            client.UseDefaultConnectionString(); //my extension - connect to mongoDB
+            MongoClient client = new MongoClient(ConnectionToMongo.UseDefaultConnectionString());
+           
             //GetDatabaseNames(client).GetAwaiter();
             GetCollectionsNames(client).GetAwaiter();
             BsonDocument doc = new BsonDocument()

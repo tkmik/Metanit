@@ -37,8 +37,8 @@ namespace Task4_3
             //    map.MapMember(p => p.Name).SetElementName("name");
             //});
 
-            var client = new MongoClient();
-            client.UseDefaultConnectionString();
+            var client = new MongoClient(ConnectionToMongo.UseDefaultConnectionString());
+            //client.UseDefaultConnectionString();
             var database = client.GetDatabase("test");
             var collection = database.GetCollection<BsonDocument>("people");
 
