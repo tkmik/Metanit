@@ -2,6 +2,7 @@
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using System;
+using System.Threading.Tasks;
 using Task4_1.Models;
 
 namespace Task4_3
@@ -47,6 +48,37 @@ namespace Task4_3
             var collection2 = database.GetCollection<Person>("people");
             collection2.InsertOne(person1);
             Console.ReadLine();
+        }
+
+        private static async Task FindDocs()
+        {
+            var client = new MongoClient(ConnectionToMongo.UseDefaultConnectionString());
+            var database = client.GetDatabase("test");
+            var collection = database.GetCollection<BsonDocument>("people");
+            var filter = new BsonDocument("$or", new BsonArray 
+            {
+                new BsonDocument("Age", new BsonDocument("$gte", 30)),
+                new BsonDocument("Name", "Mikita")
+            });
+            var builder = Builders<BsonDocument>.Filter;
+            var filter2 = builder.Gte("Age", 30) | builder.Eq("Name", "Mikita");
+            using (var cursor = await collection.FindAsync(filter))
+            {
+                while (await cursor.MoveNextAsync())
+                {
+                    var people = cursor.Current;
+                    foreach (var doc in people)
+                    {
+                        Console.WriteLine(doc);
+                    }
+                }
+            }
+            var people2 = await collection.Find(filter).Skip(2).Limit(3).ToListAsync();
+
+            var collection2 = database.GetCollection<Person>("people");
+            var people3 = await collection2.Find(p => p.Name == "Mikita" && p.Age >= 30).SortBy(p => p.Name).ToListAsync();
+            var builder2 = Builders<Person>.Filter.Where(p => p.Name == "Mikita" && p.Age >= 30);
+
         }
     }
 }
