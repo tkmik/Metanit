@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Task4_3
 {
-    public static class ConnectionToMongo
+    public class ConnectionToMongo
     {
         public static string UseDefaultConnectionString()
         {

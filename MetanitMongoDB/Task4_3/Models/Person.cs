@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Task4_1.Models
 {
+    [BsonIgnoreExtraElements]
     class Person
     {
         [BsonId]
