@@ -75,3 +75,5 @@
 # MetanitMongoDB
 * Task4_1 - Working with connection to MongoDB
 * Task4_3 - Working with creation collection/document and insertion into the database
+* Task4_12 - Working with GriFS
+* Task4_13 - Working with ASP.NET Core(adding, editing, deleting, attaching image)
