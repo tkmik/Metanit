@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>React</title>
+    </head>
+    <body>
+    <div id="app"> </div>
+    <div id="app2"> </div>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+    const user = {
+        id : 1,
+        age : 20,
+        firstName : "Mikita",
+        lastName : "Tkach",
+        getFullName: function(){
+            return `${this.firstName} ${this.lastName}`
+        }
+    }
+    const userClassName = "user-info";
+    const styleObj = {
+        color : "red",
+        fontFamily : "Verdana"
+    }
+        ReactDOM.render(
+            <h2>2 + 2 = {2 + 2}</h2>,            
+            document.getElementById("app")            
+        )
+        ReactDOM.render(
+            <div id={user.id} className={userClassName} style={styleObj}>
+                <p>FullName : {user.getFullName}</p>
+                <p>Age : {user.age}</p>
+                <p>Time : {new Date().toLocaleTimeString()}</p>
+            </div>,
+            document.getElementById("app2")            
+        )
+    </script>
+    </body>
+</html>
