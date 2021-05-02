@@ -91,3 +91,6 @@
 * Task2_3 - props
 * Task2_4 - actions
 * Task2_5 - state
+* Task2_6 - component life cycle
+* Task2_7 - resource management 
+* Task2_8 - composite components
