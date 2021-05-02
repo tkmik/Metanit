@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>React</title>
+        <style>
+            button{
+                width: 100px;
+                height: 30px;
+                border-radius: 4px;
+                margin: 50px;
+            }
+            .on{
+                color: #777;
+                background-color: #ccc;
+            }
+            .off{
+                color: #999;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app"></div>
+        <div id="button"></div>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            class Hello extends React.Component{
+                constructor(props){
+                    super(props);
+                    this.state = { welcome: "Hello" };
+                }
+                render(){
+                    return <h3>{this.state.welcome}</h3>
+                }
+            }
+            ReactDOM.render(
+                <Hello />,
+                document.getElementById("app")
+            )
+            class ClickButton extends React.Component{
+                constructor(props){
+                    super(props);
+                    this.state = { class: "off", label: "Press"};
+
+                    this.press = this.press.bind(this);
+                }
+                press(){
+                    let className = (this.state.class==="off")?"on":"off";
+                    this.setState({class: className});
+                }
+                render(){
+                    return <button onClick={this.press} className={this.state.class}>{this.state.label}</button>
+                }
+            }
+            ReactDOM.render(
+                <ClickButton />,
+                document.getElementById("button")
+            )
+        </script>
+    </body>
+</html>
