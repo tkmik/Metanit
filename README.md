@@ -77,3 +77,17 @@
 * Task4_3 - Working with creation collection/document and insertion into the database
 * Task4_12 - Working with GriFS
 * Task4_13 - Working with ASP.NET Core(adding, editing, deleting, attaching image)
+
+# MetanitReact
+## Introduction to React
+* Task1_1 - the first app
+* Task1_2 - Working with JSX
+* Task1_3 - JSX and Babel
+* Task1_4 - Node.js
+* Task1_5 - Babel-cli
+## Basis of React
+* Task2_1 - element render
+* Task2_2 - components
+* Task2_3 - props
+* Task2_4 - actions
+* Task2_5 - state
