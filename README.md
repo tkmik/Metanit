@@ -94,3 +94,6 @@
 * Task2_6 - component life cycle
 * Task2_7 - resource management 
 * Task2_8 - composite components
+* Task3_1 - form
+* Task3_2 - form validation
+* Task3_3 - refs
