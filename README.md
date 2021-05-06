@@ -101,3 +101,7 @@
 * Task4_2 - child routes
 * Task4_3 - link building
 * Task4_4 - route params
+* Task4_5 - links with parameters
+* Task4_6 - parsing a query string
+* Task4_7 - forwarding
+* Task4_8 - React-router and webpack
