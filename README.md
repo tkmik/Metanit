@@ -94,9 +94,11 @@
 * Task2_6 - component life cycle
 * Task2_7 - resource management 
 * Task2_8 - composite components
+## Forms
 * Task3_1 - form
 * Task3_2 - form validation
 * Task3_3 - refs
+## Routing
 * Task4_1 - routes
 * Task4_2 - child routes
 * Task4_3 - link building
